@@ -54,6 +54,13 @@ class ViewController: UIViewController {
         default:
             println("error")
         }
+
+        let obj1 = (60, 50, 70)
+        let obj2:(Int, Int, Int) = (40, 50, 90)
+        let obj3:(width:Int, height:Int, weight:Int) = (40, 50, 60)
+        println(checkSize(obj1))
+        println(checkSize(obj2))
+        println(checkSize(obj3))
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,5 +69,16 @@ class ViewController: UIViewController {
     }
 
 
+    func checkSize(size:(width:Int, height:Int, weight:Int)) -> String {
+        var ret = ""
+        switch size {
+        case let (width, height, _) where (width >= 60) || (height >= 60):
+            return "規格外：幅or高さが60以上"
+        case let (_, _, weight) where (weight >= 80):
+            return "規格外：重さが８０以上"
+        default:
+            return "規格内"
+        }
+    }
 }
 
