@@ -162,6 +162,56 @@ class ViewController: UIViewController {
         var pickupaddress2 = (address as NSString).substringFromIndex(4)
         pickupaddress2 = (pickupaddress2 as NSString).substringToIndex(4)
         println(pickupaddress2)
+
+        var colorarray = ["red", "green", "blue", "yellow", "green"]
+        var colorcopy = colorarray[2...4]
+        var colorarraylazycopy = colorarray
+        colorarraylazycopy[0] = "redxxx"
+        colorarray.removeAtIndex(0)
+        colorarray.removeLast()
+        println(colorarray)
+        println(colorcopy)
+        println(colorarraylazycopy)
+
+        // 配列の場合は面倒くさいのかませないといけない、煩わしい
+        // enumerateはキーと配列要素のタプルを返すものらしい
+        // [(0, "red"), (1, "green"),,,] <= こんな感じ。
+        for (index, value) in enumerate(colorarray) {
+            println("\(index) : \(value)")
+        }
+        
+        var colormerge:[String] = colorarray + ["gold", "silver", "rainbow"]
+        println(colormerge)
+        println(colormerge.reverse())
+        
+        var sortedcolor = colormerge.sorted({
+            $0.uppercaseString < $1.uppercaseString
+        })
+        println(sortedcolor)
+        
+        let tupledic:[String:(val1:Int, val2:Int)] = ["p1":(1, 2), "p2":(3, 4), "p3":(5, 6)]
+        var tarodic = ["name": "たろう", "age": 20, "height": 175.2]
+        var jirodic = tarodic
+        if (!tupledic.isEmpty) {
+            println(tupledic.count)
+            var sump1 = 0, sump2 = 0
+            for (key, val) in tupledic {
+                sump1 += val.val1
+                sump2 += val.val2
+            }
+            println("p1:\(sump1) p2:\(sump2)")
+        }
+        
+        tarodic["weight"] = 68
+        jirodic["name"] = "じろう"
+        println(tarodic.description)
+        println(jirodic.description)
+        
+        jirodic.removeAll(keepCapacity: false)
+        println(jirodic)
+
+    
+    
     }
 
     override func didReceiveMemoryWarning() {
