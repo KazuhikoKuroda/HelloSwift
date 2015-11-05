@@ -195,23 +195,105 @@ class ViewController: UIViewController {
         if (!tupledic.isEmpty) {
             println(tupledic.count)
             var sump1 = 0, sump2 = 0
-            for (key, val) in tupledic {
+            for (_, val) in tupledic {
                 sump1 += val.val1
                 sump2 += val.val2
             }
             println("p1:\(sump1) p2:\(sump2)")
         }
-        
         tarodic["weight"] = 68
         jirodic["name"] = "じろう"
         println(tarodic.description)
         println(jirodic.description)
-        
         jirodic.removeAll(keepCapacity: false)
         println(jirodic)
 
-    
-    
+
+        var msg:String?
+		msg = "ハロー"
+        var newmsg:String = msg! + "・ザ・ワールド"
+        println(newmsg)
+        
+        var cnt:Int?
+        let value = 250 * (cnt ?? 2)
+        println(value)
+		
+		if let msgval = msg {
+			println("msgの値は" + msgval)
+		} else {
+			println("msgはnil")
+		}
+		
+		var sumopt = 0
+		let dicopt:[String:Int?] = ["a":23, "b":nil, "c":15, "d":nil]
+		for (_, valopt) in dicopt {
+			if let val = valopt {
+				sumopt += val
+			}
+		}
+		println(sumopt)
+		
+		
+		
+		
+		class Player1 {
+			var magic:Magic1?
+		}
+		class Magic1 {
+			var spell:String = "puipui"
+		}
+		var user:Player1 = Player1()
+		var spell = user.magic?.spell as String!
+		println(spell)
+		user.magic = Magic1()
+		spell = user.magic?.spell as String!
+		println(spell)
+
+		class Magic {
+			struct Stone {
+				var color: String
+				var spell: String
+			}
+
+			var magicPower:Int
+			var magicStone:Stone
+			
+			init(spell:String) {
+				self.magicPower = count(spell)/2
+				let index = Int(arc4random_uniform(3))
+				let colorarr = ["red", "blue", "yellow"]
+				let color = colorarr[index]
+				self.magicStone = Stone(color:color, spell:spell)
+			}
+			
+			func doMagic() -> Stone? {
+				if self.magicPower == 0 {
+					self.magicPower = 3
+					return nil
+				} else {
+					self.magicPower--
+					return self.magicStone
+				}
+				
+			}
+		}
+		class Player {
+			var magic:Magic?
+			init(spell:String?) {
+				if (spell != nil) && (spell != "") {
+					self.magic = Magic(spell: spell!)
+				}
+			}
+		}
+		
+		var user1:Player = Player(spell: "puipui")
+		for _ in 1...5 {
+			var mp = user1.magic?.magicPower as Int!
+			var stone:Magic.Stone? = user1.magic?.doMagic()
+			var spell = stone?.spell as String!
+			var color = stone?.color as String!
+			println("MP:\(mp), 色:\(color), 呪文:\(spell)")
+		}
     }
 
     override func didReceiveMemoryWarning() {
