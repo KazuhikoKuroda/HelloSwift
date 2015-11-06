@@ -13,10 +13,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-		playStart()
-		playString()
-		playArrayDictionary()
-		playOptional()
+//		playStart()
+//		playString()
+//		playArrayDictionary()
+//		playOptional()
+		playFunc()
     }
 
     override func didReceiveMemoryWarning() {
@@ -330,6 +331,82 @@ class ViewController: UIViewController {
 			var color = stone?.color as String!
 			println("MP:\(mp), 色:\(color), 呪文:\(spell)")
 		}
+	}
+
+	func playFunc() {
+		func dice() -> Int {
+			let number = 1 + Int(arc4random_uniform(6))
+			return number
+		}
+		for i:Int in 1...5 {
+			println("\(i)回目：\(dice())")
+		}
+
+		func sum(numbers:Double...) -> Double {
+			var total:Double = 0
+			for num in numbers {
+				total += num
+			}
+			return total
+		}
+		let ans = sum(1,2,3,4,5,6,7,8,9,10)
+		println(ans)
+
+		func message(name:String = "お客") -> String {
+			return "\(name)様、こんにちは"
+		}
+		println(message())
+		println(message(name: "田中"))
+		
+		func price(var yen:Int) -> Int {
+			let tax = 1.08
+			yen = Int(floor(Double(yen) * tax))
+			return yen
+		}
+		var p1:Int = 1250
+		let ans1:Int = price(p1)
+		println("\(p1):\(ans1)")
+		
+		func bmi(weight kg:Double, height cm:Double) -> Double {
+			if cm == 0 {
+				return -1;
+			}
+			var result = kg / pow(cm * 0.01, 2)
+			result = round(result * 10) / 10.0
+			return result
+		}
+		func bmi2(#weight:Double, #height:Double) -> Double {
+			return bmi(weight: weight, height: height)
+		}
+		println("体重68.5kg, 身長176.2cmのBMIは、\(bmi(weight: 68.5, height: 176.2))")
+		println("体重68.5kg, 身長176.2cmのBMIは、\(bmi2(weight: 68.5, height: 176.2))")
+
+		func arrayByInt(#arr:Array<Int>, #num:Int) -> Array<Int> {
+			var result:[Int] = []
+			for value in arr {
+				result.append(value * num)
+			}
+			return result
+		}
+		println(arrayByInt(arr: [1,2,3,4,5], num: 2))
+
+		func calcResult(#kokugo:Int, #eigo:Int, #sugaku:Int) -> (total:Int, avg:Double) {
+			var result:(total:Int, avg:Double)
+			result.total = kokugo + eigo + sugaku
+			result.avg = round(Double(result.total) / 3 * 10) / 10
+			return result
+		}
+		var result = calcResult(kokugo: 58, eigo: 78, sugaku: 91)
+		println("合計：\(result.total) 平均：\(result.avg)")
+
+		func calc(#a:Int, #b:Int) -> Int {
+			return a + b
+		}
+		func calc(#c:String, #d:String) -> Int {
+			return calc(a: c.toInt()!, b: d.toInt() ?? 0)
+		}
+		println(calc(a: 11, b: 12))
+		
 	}
 }
 
