@@ -381,7 +381,7 @@ class ViewController: UIViewController {
 		println("体重68.5kg, 身長176.2cmのBMIは、\(bmi(weight: 68.5, height: 176.2))")
 		println("体重68.5kg, 身長176.2cmのBMIは、\(bmi2(weight: 68.5, height: 176.2))")
 
-		func arrayByInt(#arr:Array<Int>, #num:Int) -> Array<Int> {
+        func arrayByInt(#arr:Array<Int>, #num:Int) -> Array<Int> {
 			var result:[Int] = []
 			for value in arr {
 				result.append(value * num)
@@ -399,14 +399,35 @@ class ViewController: UIViewController {
 		var result = calcResult(kokugo: 58, eigo: 78, sugaku: 91)
 		println("合計：\(result.total) 平均：\(result.avg)")
 
+		// オーバーロードは内部funcだと無理みたい
 		func calc(#a:Int, #b:Int) -> Int {
 			return a + b
 		}
-		func calc(#c:String, #d:String) -> Int {
-			return calc(a: c.toInt()!, b: d.toInt() ?? 0)
-		}
 		println(calc(a: 11, b: 12))
+		println(heikin(numbers: 1,2,3,4,5,9))
 		
+		func makeArray<T>(items:T ...) -> [T] {
+			var ret:[T] = []
+			for item in items {
+				ret.append(item)
+			}
+			return ret
+		}
+		println(makeArray(1,2,3,4,5))
+		println(makeArray("a", "b", "c"))
+	}
+	
+	func heikin(#numbers:[Int]) -> Double {
+		var total:Double = 0;
+		for value in numbers {
+			total += Double(value);
+		}
+		let avg:Double = total / Double(count(numbers))
+		return round(avg * 10) / 10
+	}
+	
+	func heikin(#numbers:Int...) -> Double {
+		return heikin(numbers: numbers)
 	}
 }
 
