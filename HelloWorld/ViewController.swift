@@ -415,6 +415,86 @@ class ViewController: UIViewController {
 		}
 		println(makeArray(1,2,3,4,5))
 		println(makeArray("a", "b", "c"))
+
+		func hello(#name:String) -> String {
+			return "\(name)さん、ハロー"
+		}
+		func bye(#name:String) -> String {
+			return "\(name)さん、バイ"
+		}
+		var func1 = hello
+		var func2 = bye
+		func command(#someFunc:(String) -> String, #name:String) -> String {
+			return someFunc(name)
+		}
+		println(command(someFunc: func1, name: "たなか"))
+		println(command(someFunc: func2, name: "さとう"))
+		
+		func getPriceFunc(#age:Int) -> (Int) -> Int {
+			func kidsPrice(#kosu:Int) -> Int {
+				return kosu * 400
+			}
+			func adultPrice(#kosu:Int) -> Int {
+				return kosu * 600
+			}
+			
+			if (age > 12) {
+				return adultPrice
+			}
+			return kidsPrice
+		}
+		let price10:(Int) -> Int = getPriceFunc(age: 10)
+		let price20:(Int) -> Int = getPriceFunc(age: 20)
+		println(price10(2))
+		println(price20(2))
+		
+		let myFunc:(Int, Int) -> Int = {(a:Int, b:Int) -> Int in
+			return a + b
+		}
+		println(myFunc(1,2))
+		
+		let resultC:Int = {(a:Int, b:Int) -> Int in
+			return a * b
+		}(2,3)
+		println(resultC)
+
+		let mapNums = [1,2,3,4,5]
+		let resultMap = map(mapNums, { (let v:Int) -> Int in
+			return v * 2
+		})
+//		let resultMap = map(mapNums){ (v:Int) -> Int in
+//			return v * 2
+//		}
+//		let resultMap = map(mapNums){ v in v * 2 }
+//		let resultMap = map(mapNums){ $0 * 2 }
+		println(resultMap)
+
+		let strArray:[String] = ["c", "a", "x"]
+		let sortedArray:[String] = strArray.sorted({(a:String, b:String) -> Bool in
+			return a.uppercaseString < b.uppercaseString
+		})
+		println(sortedArray)
+
+		func dicMap(var #targetDictionary:[String:Int], #closure:(String, Int) -> Int)
+			-> [String:Int] {
+			for (key, val) in targetDictionary {
+				let newVal:Int = closure(key, val)
+				targetDictionary[key] = newVal
+			}
+			return targetDictionary
+		}
+		var dic:[String:Int] = ["aaa":1, "bbb":2, "ccc":3]
+		var retDic:[String:Int] = dicMap(targetDictionary: dic, closure: { (a:String , b:Int) -> Int in
+			return b * 2
+		})
+		println(retDic)
+
+		var dic2:Dictionary<String, Int> = ["aaa":1, "bbb":2, "ccc":3, "ddd": 4]
+		var closure3 = {(a:String, b:Int) -> Int in
+			return b * 3
+		}
+		retDic = dicMap(targetDictionary: dic2, closure: closure3)
+		println(retDic)
 	}
 	
 	func heikin(#numbers:[Int]) -> Double {
