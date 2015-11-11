@@ -13,6 +13,7 @@
 		CB4733161BE9C59600C76890 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB4733151BE9C59600C76890 /* Images.xcassets */; };
 		CB4733191BE9C59600C76890 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4733171BE9C59600C76890 /* LaunchScreen.xib */; };
 		CB4733251BE9C59600C76890 /* HelloWorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4733241BE9C59600C76890 /* HelloWorldTests.swift */; };
+		CB4BEC361BF08F8A005829BD /* MyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BEC351BF08F8A005829BD /* MyClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		CB47331E1BE9C59600C76890 /* HelloWorldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloWorldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4733231BE9C59600C76890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB4733241BE9C59600C76890 /* HelloWorldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorldTests.swift; sourceTree = "<group>"; };
+		CB4BEC351BF08F8A005829BD /* MyClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyClass.swift; path = ../MyClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		CB47330B1BE9C59600C76890 /* HelloWorld */ = {
 			isa = PBXGroup;
 			children = (
+				CB4BEC351BF08F8A005829BD /* MyClass.swift */,
 				CB47330E1BE9C59600C76890 /* AppDelegate.swift */,
 				CB4733101BE9C59600C76890 /* ViewController.swift */,
 				CB4733121BE9C59600C76890 /* Main.storyboard */,
@@ -214,6 +217,7 @@
 			files = (
 				CB4733111BE9C59600C76890 /* ViewController.swift in Sources */,
 				CB47330F1BE9C59600C76890 /* AppDelegate.swift in Sources */,
+				CB4BEC361BF08F8A005829BD /* MyClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +413,7 @@
 				CB47332A1BE9C59600C76890 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB47332B1BE9C59600C76890 /* Build configuration list for PBXNativeTarget "HelloWorldTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				CB47332D1BE9C59600C76890 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

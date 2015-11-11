@@ -17,7 +17,8 @@ class ViewController: UIViewController {
 //		playString()
 //		playArrayDictionary()
 //		playOptional()
-		playFunc()
+//		playFunc()
+		playClass()
     }
 
     override func didReceiveMemoryWarning() {
@@ -496,7 +497,6 @@ class ViewController: UIViewController {
 		retDic = dicMap(targetDictionary: dic2, closure: closure3)
 		println(retDic)
 	}
-	
 	func heikin(#numbers:[Int]) -> Double {
 		var total:Double = 0;
 		for value in numbers {
@@ -505,9 +505,24 @@ class ViewController: UIViewController {
 		let avg:Double = total / Double(count(numbers))
 		return round(avg * 10) / 10
 	}
-	
 	func heikin(#numbers:Int...) -> Double {
 		return heikin(numbers: numbers)
+	}
+
+	
+	func playClass() {
+		let myObj = MyClass()
+		myObj.hello()
+
+		let myObj2 = MyClass(msg: "ほげハロー")
+		myObj2.hello()
+		
+		let myObj3 = MyClass(msg: "こんにちは", name: "桜子")
+		myObj3.hello()
+		
+		println(MyClass.version)
+		MyClass.version = "1.1.0"
+		println(MyClass.version)
 	}
 }
 
