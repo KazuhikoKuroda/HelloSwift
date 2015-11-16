@@ -41,7 +41,7 @@ class MyClass {
 
 	
 	deinit {
-		println("\(msg)　のdeinitが呼ばれました")
+		print("\(msg)　のdeinitが呼ばれました")
 	}
 	func hello() {
 		var message:String = "\(Property.objectCount)個目："
@@ -50,6 +50,6 @@ class MyClass {
 		} else {
 			message += msg
 		}
-		println(message)
+		print(message)
 	}
 }

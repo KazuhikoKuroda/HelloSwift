@@ -30,51 +30,50 @@ class ViewController: UIViewController {
 
 	func playStart() {
 		// Do any additional setup after loading the view, typically from a nib.
-		println("helloworld")
+		print("helloworld")
 		//        let hoge:Int = 10, fuga = "えん"
 		//        println(String(hoge) + fuga)
 		
 		let tpl1:(String, Int) = ("太郎", 33)
-		println(tpl1)
+		print(tpl1)
 		
 		let tpl2:(name:String, age:Int) = ("太郎", 33)
-		println(tpl2.0 + " : " + String(tpl2.1) + "さい")
-		println(tpl2.name + " : " + String(tpl2.age) + "さい")
+		print(tpl2.0 + " : " + String(tpl2.1) + "さい")
+		print(tpl2.name + " : " + String(tpl2.age) + "さい")
 		
 		for i in (1...5){
-			println("\(i)回目")
+			print("\(i)回目")
 		}
 		
 		let colors = ["blue", "red"] + ["black", "white"]
 		for color in colors {
-			println(color)
+			print(color)
 		}
 		
 		let tokuten = arc4random_uniform(100)
 		var result:Int;
 		if (tokuten < 40) {
-			println("\(tokuten)点：不合格")
+			print("\(tokuten)点：不合格")
 			result = 0
 		} else if (tokuten < 70) {
-			println("\(tokuten)点：惜しいね")
+			print("\(tokuten)点：惜しいね")
 			result = 1
 		} else {
-			println("\(tokuten)点：合格")
+			print("\(tokuten)点：合格")
 			result = 2
 		}
 		
 		switch result {
 		case 0, 1:
-			println("補修決定")
+			print("補修決定")
 		case 2:
-			println("お疲れ様でした")
+			print("お疲れ様でした")
 		default:
-			println("error")
+			print("error")
 		}
 
 		
 		func checkSize(size:(width:Int, height:Int, weight:Int)) -> String {
-			var ret = ""
 			switch size {
 			case let (width, height, _) where (width >= 60) || (height >= 60):
 				return "規格外：幅or高さが60以上"
@@ -88,19 +87,19 @@ class ViewController: UIViewController {
 		let obj1 = (60, 50, 70)
 		let obj2:(Int, Int, Int) = (40, 50, 90)
 		let obj3:(width:Int, height:Int, weight:Int) = (40, 50, 60)
-		println(checkSize(obj1))
-		println(checkSize(obj2))
-		println(checkSize(obj3))
+		print(checkSize(obj1))
+		print(checkSize(obj2))
+		print(checkSize(obj3))
 		
 		let metro = ["M": "丸ノ内線", "H": "日比谷線", "G": "銀座線", "T": "東西線"]
 		for (key, value) in metro {
-			println("\(key)は\(value)です")
+			print("\(key)は\(value)です")
 		}
 		for key in metro.keys {
-			println("\(key)どぇす")
+			print("\(key)どぇす")
 		}
 		for value in metro.values {
-			println("\(value)どぇす")
+			print("\(value)どぇす")
 		}
 		
 		var ticket=5, power=30
@@ -108,158 +107,158 @@ class ViewController: UIViewController {
 			ticket--
 			power += 20
 		}
-		println("\(power)、残チケット\(ticket)")
+		print("\(power)、残チケット\(ticket)")
 		
 		var a:UInt32, b:UInt32, c:UInt32, total:Int
-		do {
+		repeat {
 			a = arc4random_uniform(13)+1
 			b = arc4random_uniform(13)+1
 			c = arc4random_uniform(13)+1
 			total = Int(a + b + c)
 		} while (total != 21)
-		println("\(a),\(b),\(c)")
+		print("\(a),\(b),\(c)")
 		
 		xloop: for x in 0...5 {
 			yloop: for y in 0...5 {
 				if (x < y) {
-					print("\n")
+					print("\n", terminator: "")
 					continue xloop
 				}
-				print((x, y))
+				print((x, y), terminator: "")
 			}
 		}
-		print("\n")
-		print("\n")
+		print("\n", terminator: "")
+		print("\n", terminator: "")
 		
 		xloop: for x in 0...5 {
 			yloop: for y in 0...5 {
 				if (x > 3) {
 					break xloop
 				}
-				print((x, y))
+				print((x, y), terminator: "")
 			}
-			print("\n")
+			print("\n", terminator: "")
 		}
 	}
 	
 	
 	func playString() {
 		let stars = String(count:10, repeatedValue:Character("⭐️"))
-		println(stars + String(count(stars)))
+		print(stars + String(stars.characters.count))
 		
 		let str1 = "SWIFT", str2 = "swift"
 		if (str1.lowercaseString == str2.lowercaseString) {
-			println("\(str1)と\(str2)は大小文字問わなければ同じ")
+			print("\(str1)と\(str2)は大小文字問わなければ同じ")
 		}
 		
 		let tanka:String = "1000", kosu:String = "5"
-		let kingaku:Int = tanka.toInt()! * kosu.toInt()!
-		println(kingaku)
+		let kingaku:Int = Int(tanka)! * Int(kosu)!
+		print(kingaku)
 		
 		let r = 120, pai = "3.14"
 		let ensyu:Float = Float(2 * r) * (pai as NSString).floatValue
-		println("円周は\(ensyu)です")
+		print("円周は\(ensyu)です")
 		
 		let weight = 135.2, package = 10.5
-		println("内容量" + weight.description + "グラム\nパッケージ含めると" +
+		print("内容量" + weight.description + "グラム\nパッケージ含めると" +
 			(weight + package).description + "グラム")
 		
 		let str3 = "あいうえおかきくけこ"
 		let range:Range? = str3.rangeOfString("えおか")
 		if let theRange = range {
-			println("「\(str3)」の\(range!)は「\(str3[theRange])」")
+			print("「\(str3)」の\(range!)は「\(str3[theRange])」")
 		} else {
-			println("見つかりません")
+			print("見つかりません")
 		}
 		
 		let address = "神奈川県茅ヶ崎市東海岸"
-		let findindex = find(address, "県")
+		let findindex = address.characters.indexOf("県")
 		if findindex != nil {
 			let address1 = address[address.startIndex...findindex!]
-			println("address1:\(address1)")
-			var start2 = findindex?.successor()
-			var end2 = address.endIndex
+			print("address1:\(address1)")
+			let start2 = findindex?.successor()
+			let end2 = address.endIndex
 			let address2 = address[start2!..<end2]
-			println("address2:\(address2)")
+			print("address2:\(address2)")
 		}
 		
 		if address.hasPrefix("神奈川") && address.hasSuffix("東海岸") {
-			println("神奈川ではじまり東海岸でおわる")
+			print("神奈川ではじまり東海岸でおわる")
 		}
 		
-		let start = advance(address.startIndex, 4)
-		let end = advance(start, 4)
+		let start = address.startIndex.advancedBy(4)
+		let end = start.advancedBy(4)
 		let pickupaddress = address[start..<end]
-		println(pickupaddress)
+		print(pickupaddress)
 		
 		var pickupaddress2 = (address as NSString).substringFromIndex(4)
 		pickupaddress2 = (pickupaddress2 as NSString).substringToIndex(4)
-		println(pickupaddress2)
+		print(pickupaddress2)
 	}
 
 	
 	func playArrayDictionary() {
 		var colorarray = ["red", "green", "blue", "yellow", "green"]
-		var colorcopy = colorarray[2...4]
+		let colorcopy = colorarray[2...4]
 		var colorarraylazycopy = colorarray
 		colorarraylazycopy[0] = "redxxx"
 		colorarray.removeAtIndex(0)
 		colorarray.removeLast()
-		println(colorarray)
-		println(colorcopy)
-		println(colorarraylazycopy)
+		print(colorarray)
+		print(colorcopy)
+		print(colorarraylazycopy)
 		
 		// 配列の場合は面倒くさいのかませないといけない、煩わしい
 		// enumerateはキーと配列要素のタプルを返すものらしい
 		// [(0, "red"), (1, "green"),,,] <= こんな感じ。
-		for (index, value) in enumerate(colorarray) {
-			println("\(index) : \(value)")
+		for (index, value) in colorarray.enumerate() {
+			print("\(index) : \(value)")
 		}
 		
-		var colormerge:[String] = colorarray + ["gold", "silver", "rainbow"]
-		println(colormerge)
-		println(colormerge.reverse())
+		let colormerge:[String] = colorarray + ["gold", "silver", "rainbow"]
+		print(colormerge)
+		print(Array(colormerge.reverse()))
 		
-		var sortedcolor = colormerge.sorted({
+		let sortedcolor = colormerge.sort({
 			$0.uppercaseString < $1.uppercaseString
 		})
-		println(sortedcolor)
+		print(sortedcolor)
 		
 		let tupledic:[String:(val1:Int, val2:Int)] = ["p1":(1, 2), "p2":(3, 4), "p3":(5, 6)]
 		var tarodic = ["name": "たろう", "age": 20, "height": 175.2]
 		var jirodic = tarodic
 		if (!tupledic.isEmpty) {
-			println(tupledic.count)
+			print(tupledic.count)
 			var sump1 = 0, sump2 = 0
 			for (_, val) in tupledic {
 				sump1 += val.val1
 				sump2 += val.val2
 			}
-			println("p1:\(sump1) p2:\(sump2)")
+			print("p1:\(sump1) p2:\(sump2)")
 		}
 		tarodic["weight"] = 68
 		jirodic["name"] = "じろう"
-		println(tarodic.description)
-		println(jirodic.description)
+		print(tarodic.description)
+		print(jirodic.description)
 		jirodic.removeAll(keepCapacity: false)
-		println(jirodic)
+		print(jirodic)
 	}
 	
 	
 	func playOptional() {
 		var msg:String?
 		msg = "ハロー"
-		var newmsg:String = msg! + "・ザ・ワールド"
-		println(newmsg)
+		let newmsg:String = msg! + "・ザ・ワールド"
+		print(newmsg)
 		
-		var cnt:Int?
-		let value = 250 * (cnt ?? 2)
-		println(value)
+		let cnt:Int? = 2
+		let value = 250 * cnt!
+		print(value)
 		
 		if let msgval = msg {
-			println("msgの値は" + msgval)
+			print("msgの値は" + msgval)
 		} else {
-			println("msgはnil")
+			print("msgはnil")
 		}
 		
 		var sumopt = 0
@@ -269,7 +268,7 @@ class ViewController: UIViewController {
 				sumopt += val
 			}
 		}
-		println(sumopt)
+		print(sumopt)
 		
 		
 		
@@ -280,12 +279,14 @@ class ViewController: UIViewController {
 		class Magic1 {
 			var spell:String = "puipui"
 		}
-		var user:Player1 = Player1()
-		var spell = user.magic?.spell as String!
-		println(spell)
+		let user:Player1 = Player1()
+		var spell:String?
+		if let spell1:String = user.magic?.spell as String! {
+			print(spell1)
+		}
 		user.magic = Magic1()
 		spell = user.magic?.spell as String!
-		println(spell)
+		print(spell)
 		
 		class Magic {
 			struct Stone {
@@ -297,7 +298,7 @@ class ViewController: UIViewController {
 			var magicStone:Stone
 			
 			init(spell:String) {
-				self.magicPower = count(spell)/2
+				self.magicPower = spell.characters.count/2
 				let index = Int(arc4random_uniform(3))
 				let colorarr = ["red", "blue", "yellow"]
 				let color = colorarr[index]
@@ -324,13 +325,13 @@ class ViewController: UIViewController {
 			}
 		}
 		
-		var user1:Player = Player(spell: "puipui")
+		let user1:Player = Player(spell: "puipui")
 		for _ in 1...5 {
-			var mp = user1.magic?.magicPower as Int!
-			var stone:Magic.Stone? = user1.magic?.doMagic()
-			var spell = stone?.spell as String!
-			var color = stone?.color as String!
-			println("MP:\(mp), 色:\(color), 呪文:\(spell)")
+			let mp = user1.magic?.magicPower as Int!
+			let stone:Magic.Stone? = user1.magic?.doMagic()
+			let spell = stone?.spell as String!
+			let color = stone?.color as String!
+			print("MP:\(mp), 色:\(color), 呪文:\(spell)")
 		}
 	}
 
@@ -340,7 +341,7 @@ class ViewController: UIViewController {
 			return number
 		}
 		for i:Int in 1...5 {
-			println("\(i)回目：\(dice())")
+			print("\(i)回目：\(dice())")
 		}
 
 		func sum(numbers:Double...) -> Double {
@@ -351,13 +352,13 @@ class ViewController: UIViewController {
 			return total
 		}
 		let ans = sum(1,2,3,4,5,6,7,8,9,10)
-		println(ans)
+		print(ans)
 
 		func message(name:String = "お客") -> String {
 			return "\(name)様、こんにちは"
 		}
-		println(message())
-		println(message(name: "田中"))
+		print(message())
+		print(message("田中"))
 		
 		func price(var yen:Int) -> Int {
 			let tax = 1.08
@@ -366,7 +367,7 @@ class ViewController: UIViewController {
 		}
 		var p1:Int = 1250
 		let ans1:Int = price(p1)
-		println("\(p1):\(ans1)")
+		print("\(p1):\(ans1)")
 		
 		func bmi(weight kg:Double, height cm:Double) -> Double {
 			if cm == 0 {
@@ -376,36 +377,36 @@ class ViewController: UIViewController {
 			result = round(result * 10) / 10.0
 			return result
 		}
-		func bmi2(#weight:Double, #height:Double) -> Double {
+		func bmi2(weight weight:Double, height:Double) -> Double {
 			return bmi(weight: weight, height: height)
 		}
-		println("体重68.5kg, 身長176.2cmのBMIは、\(bmi(weight: 68.5, height: 176.2))")
-		println("体重68.5kg, 身長176.2cmのBMIは、\(bmi2(weight: 68.5, height: 176.2))")
+		print("体重68.5kg, 身長176.2cmのBMIは、\(bmi(weight: 68.5, height: 176.2))")
+		print("体重68.5kg, 身長176.2cmのBMIは、\(bmi2(weight: 68.5, height: 176.2))")
 
-        func arrayByInt(#arr:Array<Int>, #num:Int) -> Array<Int> {
+        func arrayByInt(arr arr:Array<Int>, num:Int) -> Array<Int> {
 			var result:[Int] = []
 			for value in arr {
 				result.append(value * num)
 			}
 			return result
 		}
-		println(arrayByInt(arr: [1,2,3,4,5], num: 2))
+		print(arrayByInt(arr: [1,2,3,4,5], num: 2))
 
-		func calcResult(#kokugo:Int, #eigo:Int, #sugaku:Int) -> (total:Int, avg:Double) {
+		func calcResult(kokugo kokugo:Int, eigo:Int, sugaku:Int) -> (total:Int, avg:Double) {
 			var result:(total:Int, avg:Double)
 			result.total = kokugo + eigo + sugaku
 			result.avg = round(Double(result.total) / 3 * 10) / 10
 			return result
 		}
 		var result = calcResult(kokugo: 58, eigo: 78, sugaku: 91)
-		println("合計：\(result.total) 平均：\(result.avg)")
+		print("合計：\(result.total) 平均：\(result.avg)")
 
 		// オーバーロードは内部funcだと無理みたい
-		func calc(#a:Int, #b:Int) -> Int {
+		func calc(a a:Int, b:Int) -> Int {
 			return a + b
 		}
-		println(calc(a: 11, b: 12))
-		println(heikin(numbers: 1,2,3,4,5,9))
+		print(calc(a: 11, b: 12))
+		print(heikin(numbers: 1,2,3,4,5,9))
 		
 		func makeArray<T>(items:T ...) -> [T] {
 			var ret:[T] = []
@@ -414,28 +415,28 @@ class ViewController: UIViewController {
 			}
 			return ret
 		}
-		println(makeArray(1,2,3,4,5))
-		println(makeArray("a", "b", "c"))
+		print(makeArray(1,2,3,4,5))
+		print(makeArray("a", "b", "c"))
 
-		func hello(#name:String) -> String {
+		func hello(name name:String) -> String {
 			return "\(name)さん、ハロー"
 		}
-		func bye(#name:String) -> String {
+		func bye(name name:String) -> String {
 			return "\(name)さん、バイ"
 		}
 		var func1 = hello
 		var func2 = bye
-		func command(#someFunc:(String) -> String, #name:String) -> String {
+		func command(someFunc someFunc:(String) -> String, name:String) -> String {
 			return someFunc(name)
 		}
-		println(command(someFunc: func1, name: "たなか"))
-		println(command(someFunc: func2, name: "さとう"))
+		print(command(someFunc: func1, name: "たなか"))
+		print(command(someFunc: func2, name: "さとう"))
 		
-		func getPriceFunc(#age:Int) -> (Int) -> Int {
-			func kidsPrice(#kosu:Int) -> Int {
+		func getPriceFunc(age age:Int) -> (Int) -> Int {
+			func kidsPrice(kosu kosu:Int) -> Int {
 				return kosu * 400
 			}
-			func adultPrice(#kosu:Int) -> Int {
+			func adultPrice(kosu kosu:Int) -> Int {
 				return kosu * 600
 			}
 			
@@ -446,21 +447,21 @@ class ViewController: UIViewController {
 		}
 		let price10:(Int) -> Int = getPriceFunc(age: 10)
 		let price20:(Int) -> Int = getPriceFunc(age: 20)
-		println(price10(2))
-		println(price20(2))
+		print(price10(2))
+		print(price20(2))
 		
 		let myFunc:(Int, Int) -> Int = {(a:Int, b:Int) -> Int in
 			return a + b
 		}
-		println(myFunc(1,2))
+		print(myFunc(1,2))
 		
 		let resultC:Int = {(a:Int, b:Int) -> Int in
 			return a * b
 		}(2,3)
-		println(resultC)
+		print(resultC)
 
 		let mapNums = [1,2,3,4,5]
-		let resultMap = map(mapNums, { (let v:Int) -> Int in
+		let resultMap = mapNums.map({ (let v:Int) -> Int in
 			return v * 2
 		})
 //		let resultMap = map(mapNums){ (v:Int) -> Int in
@@ -468,15 +469,15 @@ class ViewController: UIViewController {
 //		}
 //		let resultMap = map(mapNums){ v in v * 2 }
 //		let resultMap = map(mapNums){ $0 * 2 }
-		println(resultMap)
+		print(resultMap)
 
 		let strArray:[String] = ["c", "a", "x"]
-		let sortedArray:[String] = strArray.sorted({(a:String, b:String) -> Bool in
+		let sortedArray:[String] = strArray.sort({(a:String, b:String) -> Bool in
 			return a.uppercaseString < b.uppercaseString
 		})
-		println(sortedArray)
+		print(sortedArray)
 
-		func dicMap(var #targetDictionary:[String:Int], #closure:(String, Int) -> Int)
+		func dicMap(var targetDictionary targetDictionary:[String:Int], closure:(String, Int) -> Int)
 			-> [String:Int] {
 			for (key, val) in targetDictionary {
 				let newVal:Int = closure(key, val)
@@ -484,28 +485,28 @@ class ViewController: UIViewController {
 			}
 			return targetDictionary
 		}
-		var dic:[String:Int] = ["aaa":1, "bbb":2, "ccc":3]
+		let dic:[String:Int] = ["aaa":1, "bbb":2, "ccc":3]
 		var retDic:[String:Int] = dicMap(targetDictionary: dic, closure: { (a:String , b:Int) -> Int in
 			return b * 2
 		})
-		println(retDic)
+		print(retDic)
 
-		var dic2:Dictionary<String, Int> = ["aaa":1, "bbb":2, "ccc":3, "ddd": 4]
-		var closure3 = {(a:String, b:Int) -> Int in
+		let dic2:Dictionary<String, Int> = ["aaa":1, "bbb":2, "ccc":3, "ddd": 4]
+		let closure3 = {(a:String, b:Int) -> Int in
 			return b * 3
 		}
 		retDic = dicMap(targetDictionary: dic2, closure: closure3)
-		println(retDic)
+		print(retDic)
 	}
-	func heikin(#numbers:[Int]) -> Double {
+	func heikin(numbers numbers:[Int]) -> Double {
 		var total:Double = 0;
 		for value in numbers {
 			total += Double(value);
 		}
-		let avg:Double = total / Double(count(numbers))
+		let avg:Double = total / Double(numbers.count)
 		return round(avg * 10) / 10
 	}
-	func heikin(#numbers:Int...) -> Double {
+	func heikin(numbers numbers:Int...) -> Double {
 		return heikin(numbers: numbers)
 	}
 
@@ -520,9 +521,9 @@ class ViewController: UIViewController {
 		let myObj3 = MyClass(msg: "こんにちは", name: "桜子")
 		myObj3.hello()
 		
-		println(MyClass.version)
+		print(MyClass.version)
 		MyClass.version = "1.1.0"
-		println(MyClass.version)
+		print(MyClass.version)
 	}
 }
 
