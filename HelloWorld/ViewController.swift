@@ -524,6 +524,7 @@ class ViewController: UIViewController {
 		print(MyClass.version)
 		MyClass.version = "1.1.0"
 		print(MyClass.version)
+		print(MyClass.hogehoge)
 	}
 }
 

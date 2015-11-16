@@ -11,6 +11,7 @@ import Foundation
 class MyClass {
 	let msg:String
 	let name:String?
+	static let hogehoge:String = "hogehoge"
 	private struct Property {
 		static var version:String = "1.0.0"
 		static var objectCount:Int = 0
