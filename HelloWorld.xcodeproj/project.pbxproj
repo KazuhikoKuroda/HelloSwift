@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB04A75F1C157C5200E1B242 /* StructStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB04A75E1C157C5200E1B242 /* StructStock.swift */; };
 		CB335D161C1198DC0064F442 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB335D151C1198DC0064F442 /* Circle.swift */; };
 		CB47330F1BE9C59600C76890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB47330E1BE9C59600C76890 /* AppDelegate.swift */; };
 		CB4733111BE9C59600C76890 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4733101BE9C59600C76890 /* ViewController.swift */; };
@@ -22,6 +23,10 @@
 		CB98D3DB1C1553E40044DE12 /* GameBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98D3DA1C1553E40044DE12 /* GameBase.swift */; };
 		CB98D3DD1C1554810044DE12 /* ExtendGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98D3DC1C1554810044DE12 /* ExtendGame.swift */; };
 		CB98D3E11C1556F50044DE12 /* ExMyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98D3E01C1556F50044DE12 /* ExMyClass.swift */; };
+		CB98D3E31C155F5F0044DE12 /* EnumSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98D3E21C155F5F0044DE12 /* EnumSize.swift */; };
+		CB98D3E51C15628B0044DE12 /* EnumPrize.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98D3E41C15628B0044DE12 /* EnumPrize.swift */; };
+		CB98D3E71C1565520044DE12 /* EnumColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98D3E61C1565520044DE12 /* EnumColor.swift */; };
+		CB98D3E91C156B8A0044DE12 /* StructLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98D3E81C156B8A0044DE12 /* StructLine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB04A75E1C157C5200E1B242 /* StructStock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructStock.swift; sourceTree = "<group>"; };
 		CB335D151C1198DC0064F442 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		CB4733091BE9C59600C76890 /* HelloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB47330D1BE9C59600C76890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +60,10 @@
 		CB98D3DA1C1553E40044DE12 /* GameBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBase.swift; sourceTree = "<group>"; };
 		CB98D3DC1C1554810044DE12 /* ExtendGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendGame.swift; sourceTree = "<group>"; };
 		CB98D3E01C1556F50044DE12 /* ExMyClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExMyClass.swift; path = ../ExMyClass.swift; sourceTree = "<group>"; };
+		CB98D3E21C155F5F0044DE12 /* EnumSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumSize.swift; sourceTree = "<group>"; };
+		CB98D3E41C15628B0044DE12 /* EnumPrize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumPrize.swift; sourceTree = "<group>"; };
+		CB98D3E61C1565520044DE12 /* EnumColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumColor.swift; sourceTree = "<group>"; };
+		CB98D3E81C156B8A0044DE12 /* StructLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructLine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,8 @@
 				CB4BEC351BF08F8A005829BD /* MyClass.swift */,
 				CB47330E1BE9C59600C76890 /* AppDelegate.swift */,
 				CB4733101BE9C59600C76890 /* ViewController.swift */,
+				CB98D3E81C156B8A0044DE12 /* StructLine.swift */,
+				CB98D3E61C1565520044DE12 /* EnumColor.swift */,
 				CB98D3D61C15508D0044DE12 /* GameProtocol.swift */,
 				CB98D3D81C1550C40044DE12 /* MyGame.swift */,
 				CB98D3DA1C1553E40044DE12 /* GameBase.swift */,
@@ -110,6 +122,9 @@
 				CB47330C1BE9C59600C76890 /* Supporting Files */,
 				CB335D151C1198DC0064F442 /* Circle.swift */,
 				CB98D3D21C152B050044DE12 /* Bank.swift */,
+				CB98D3E21C155F5F0044DE12 /* EnumSize.swift */,
+				CB98D3E41C15628B0044DE12 /* EnumPrize.swift */,
+				CB04A75E1C157C5200E1B242 /* StructStock.swift */,
 			);
 			path = HelloWorld;
 			sourceTree = "<group>";
@@ -241,15 +256,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB98D3E91C156B8A0044DE12 /* StructLine.swift in Sources */,
 				CB4733111BE9C59600C76890 /* ViewController.swift in Sources */,
 				CB98D3E11C1556F50044DE12 /* ExMyClass.swift in Sources */,
 				CB98D3D51C152DDF0044DE12 /* Human.swift in Sources */,
 				CB335D161C1198DC0064F442 /* Circle.swift in Sources */,
+				CB04A75F1C157C5200E1B242 /* StructStock.swift in Sources */,
+				CB98D3E51C15628B0044DE12 /* EnumPrize.swift in Sources */,
 				CB98D3D31C152B050044DE12 /* Bank.swift in Sources */,
+				CB98D3E71C1565520044DE12 /* EnumColor.swift in Sources */,
 				CB47330F1BE9C59600C76890 /* AppDelegate.swift in Sources */,
 				CB4BEC361BF08F8A005829BD /* MyClass.swift in Sources */,
 				CB98D3D71C15508D0044DE12 /* GameProtocol.swift in Sources */,
 				CB98D3DD1C1554810044DE12 /* ExtendGame.swift in Sources */,
+				CB98D3E31C155F5F0044DE12 /* EnumSize.swift in Sources */,
 				CB98D3D91C1550C40044DE12 /* MyGame.swift in Sources */,
 				CB98D3DB1C1553E40044DE12 /* GameBase.swift in Sources */,
 			);

@@ -18,7 +18,9 @@ class ViewController: UIViewController {
 //		playArrayDictionary()
 //		playOptional()
 //		playFunc()
-		playClass()
+//		playClass()
+//		playEnum()
+		playStruct()
     }
 
     override func didReceiveMemoryWarning() {
@@ -570,6 +572,70 @@ class ViewController: UIViewController {
 		myObj.thankYou()
 		myObj2.thankYou()
 		myObj3.thankYou()
+	}
+	
+	func playEnum() {
+		func packing(size:WomensSize) -> String {
+			var stuff:String
+			switch size {
+			case .XS, .S:
+				stuff = "女性用XS, S サイズ備品"
+			case .M:
+				stuff = "女性用M サイズ備品"
+			case .L:
+				stuff = "女性用L サイズ備品"
+			}
+			return stuff
+		}
+		print(packing(WomensSize.S))
+		
+		print(MensSize.S.rawValue)
+		print(MensSize.M.rawValue)
+		print(MensSize.L.rawValue)
+		print(MensSize.XL.rawValue)
+		print(MensSize(rawValue: 155))
+		
+		let myPrize = Prize.Bronze
+		print(myPrize.description())
+		print(Prize.Five.description())
+		if let yourPrize = Prize(rawValue: 6) {
+			print(yourPrize.description())
+		}
+		
+		let p1 = Pattern.Monotone(.red)
+		let p2 = Pattern.Border(color1: .blue, color2: .white)
+		let p3 = Pattern.Dots(base: .white, dot1: .yellow, dot2: .red)
+		let patternlist:[Pattern] = [p1, p2, p3]
+		for p in patternlist {
+			switch p {
+			case .Monotone(let c):
+				print("\(c.rawValue)色の無地")
+			case .Border(let c1, let c2):
+				print("\(c1.rawValue)と\(c2.rawValue)のボーダー")
+			case .Dots(let base, let d1, let d2):
+				print("\(base.rawValue)色の記事に\(d1.rawValue)と\(d2.rawValue)の斑点")
+			}
+		}
+	}
+	
+	func playStruct() {
+		let point1 = Point(v: 10, h: 20)
+		let point2 = Point(v: 20, h: 50)
+		var line = Line(p1: point1, p2: point2)
+		line.move(10, h: 100)
+		print("移動後のp1座標: p1.v \(line.p1.v) p1.h \(line.p1.h)")
+		print("移動後のp2座標: p2.v \(line.p2.v) p2.h \(line.p2.h)")
+		
+		var addixStock = Stock(name: "addix")
+		addixStock["green", 24.5] = 3
+		addixStock["green", 25.0] = 5
+		addixStock["green", 25.0] += 1
+		addixStock["red", 26.0] = 2
+		
+		print(addixStock["green", 24.5])
+		print(addixStock["green", 25.0])
+		print(addixStock["green", 26.0])
+		print(addixStock["red", 26.0])
 	}
 }
 
