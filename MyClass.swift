@@ -12,6 +12,7 @@ class MyClass {
 	let msg:String
 	let name:String?
 	static let hogehoge:String = "hogehoge"
+	static var fugafuga:String = "fugafuga"
 	private struct Property {
 		static var version:String = "1.0.0"
 		static var objectCount:Int = 0
@@ -52,5 +53,15 @@ class MyClass {
 			message += msg
 		}
 		print(message)
+	}
+}
+
+class Message {
+	private let msg:String = "まじそん"
+	class func GoodMorning() -> String {
+		return "おはようございます。"
+	}
+	static func GoodBye() -> String {
+		return "さよなら。"
 	}
 }

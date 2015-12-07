@@ -525,6 +525,51 @@ class ViewController: UIViewController {
 		MyClass.version = "1.1.0"
 		print(MyClass.version)
 		print(MyClass.hogehoge)
+		
+		print(MyClass.fugafuga)
+		MyClass.fugafuga = "ふがふが"
+		print(MyClass.fugafuga)
+		
+		print(Message.GoodMorning())
+		print(Message.GoodBye())
+		
+		let myCircle = Circle()
+		print(myCircle.radius)
+		print(myCircle.area)
+		
+		myCircle.area = 2
+		print(myCircle.radius)
+		print(myCircle.area)
+		
+		let myBankManager = BankManager()
+		print(myBankManager.nyukin(10000))
+		print(myBankManager.syukkin(7000))
+		print(myBankManager.syukkin(5000))
+
+		let hero:Hero = Hero(heroName: "すぱーまん", name: "山田太郎")
+		hero.walk(10)
+		hero.isHyperMode = true
+		hero.walk(10)
+		hero.fly(120.5)
+		hero.kmLog()
+		
+		let myGame:GameProtocol = MyGame()
+		myGame.hit()
+		print(myGame.gamePoint)
+		myGame.miss()
+		print(myGame.gamePoint)
+		myGame.hit()
+		print(myGame.gamePoint)
+		
+		let exGame:ExtendGame = ExtendGame()
+		for _ in 0...5 {
+			exGame.gameHit()
+			print(exGame.gamePoint)
+		}
+		
+		myObj.thankYou()
+		myObj2.thankYou()
+		myObj3.thankYou()
 	}
 }
 

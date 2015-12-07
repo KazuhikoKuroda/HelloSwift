@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB335D161C1198DC0064F442 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB335D151C1198DC0064F442 /* Circle.swift */; };
 		CB47330F1BE9C59600C76890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB47330E1BE9C59600C76890 /* AppDelegate.swift */; };
 		CB4733111BE9C59600C76890 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4733101BE9C59600C76890 /* ViewController.swift */; };
 		CB4733141BE9C59600C76890 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB4733121BE9C59600C76890 /* Main.storyboard */; };
@@ -14,6 +15,13 @@
 		CB4733191BE9C59600C76890 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4733171BE9C59600C76890 /* LaunchScreen.xib */; };
 		CB4733251BE9C59600C76890 /* HelloWorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4733241BE9C59600C76890 /* HelloWorldTests.swift */; };
 		CB4BEC361BF08F8A005829BD /* MyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4BEC351BF08F8A005829BD /* MyClass.swift */; };
+		CB98D3D31C152B050044DE12 /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98D3D21C152B050044DE12 /* Bank.swift */; };
+		CB98D3D51C152DDF0044DE12 /* Human.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98D3D41C152DDF0044DE12 /* Human.swift */; };
+		CB98D3D71C15508D0044DE12 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98D3D61C15508D0044DE12 /* GameProtocol.swift */; };
+		CB98D3D91C1550C40044DE12 /* MyGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98D3D81C1550C40044DE12 /* MyGame.swift */; };
+		CB98D3DB1C1553E40044DE12 /* GameBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98D3DA1C1553E40044DE12 /* GameBase.swift */; };
+		CB98D3DD1C1554810044DE12 /* ExtendGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98D3DC1C1554810044DE12 /* ExtendGame.swift */; };
+		CB98D3E11C1556F50044DE12 /* ExMyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98D3E01C1556F50044DE12 /* ExMyClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB335D151C1198DC0064F442 /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		CB4733091BE9C59600C76890 /* HelloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB47330D1BE9C59600C76890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB47330E1BE9C59600C76890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +47,13 @@
 		CB4733231BE9C59600C76890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB4733241BE9C59600C76890 /* HelloWorldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloWorldTests.swift; sourceTree = "<group>"; };
 		CB4BEC351BF08F8A005829BD /* MyClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyClass.swift; path = ../MyClass.swift; sourceTree = "<group>"; };
+		CB98D3D21C152B050044DE12 /* Bank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
+		CB98D3D41C152DDF0044DE12 /* Human.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Human.swift; sourceTree = "<group>"; };
+		CB98D3D61C15508D0044DE12 /* GameProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
+		CB98D3D81C1550C40044DE12 /* MyGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGame.swift; sourceTree = "<group>"; };
+		CB98D3DA1C1553E40044DE12 /* GameBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBase.swift; sourceTree = "<group>"; };
+		CB98D3DC1C1554810044DE12 /* ExtendGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendGame.swift; sourceTree = "<group>"; };
+		CB98D3E01C1556F50044DE12 /* ExMyClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExMyClass.swift; path = ../ExMyClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +95,21 @@
 		CB47330B1BE9C59600C76890 /* HelloWorld */ = {
 			isa = PBXGroup;
 			children = (
+				CB98D3E01C1556F50044DE12 /* ExMyClass.swift */,
 				CB4BEC351BF08F8A005829BD /* MyClass.swift */,
 				CB47330E1BE9C59600C76890 /* AppDelegate.swift */,
 				CB4733101BE9C59600C76890 /* ViewController.swift */,
+				CB98D3D61C15508D0044DE12 /* GameProtocol.swift */,
+				CB98D3D81C1550C40044DE12 /* MyGame.swift */,
+				CB98D3DA1C1553E40044DE12 /* GameBase.swift */,
+				CB98D3DC1C1554810044DE12 /* ExtendGame.swift */,
+				CB98D3D41C152DDF0044DE12 /* Human.swift */,
 				CB4733121BE9C59600C76890 /* Main.storyboard */,
 				CB4733151BE9C59600C76890 /* Images.xcassets */,
 				CB4733171BE9C59600C76890 /* LaunchScreen.xib */,
 				CB47330C1BE9C59600C76890 /* Supporting Files */,
+				CB335D151C1198DC0064F442 /* Circle.swift */,
+				CB98D3D21C152B050044DE12 /* Bank.swift */,
 			);
 			path = HelloWorld;
 			sourceTree = "<group>";
@@ -218,8 +242,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB4733111BE9C59600C76890 /* ViewController.swift in Sources */,
+				CB98D3E11C1556F50044DE12 /* ExMyClass.swift in Sources */,
+				CB98D3D51C152DDF0044DE12 /* Human.swift in Sources */,
+				CB335D161C1198DC0064F442 /* Circle.swift in Sources */,
+				CB98D3D31C152B050044DE12 /* Bank.swift in Sources */,
 				CB47330F1BE9C59600C76890 /* AppDelegate.swift in Sources */,
 				CB4BEC361BF08F8A005829BD /* MyClass.swift in Sources */,
+				CB98D3D71C15508D0044DE12 /* GameProtocol.swift in Sources */,
+				CB98D3DD1C1554810044DE12 /* ExtendGame.swift in Sources */,
+				CB98D3D91C1550C40044DE12 /* MyGame.swift in Sources */,
+				CB98D3DB1C1553E40044DE12 /* GameBase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
